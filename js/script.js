@@ -19,11 +19,13 @@ function submeterFormulario(event) {
   submitButton.classList.add('animated');
 
   // Remover a classe 'animated' e exibir a mensagem de sucesso após 4 segundos
-  setTimeout(() => {
+   setTimeout(() => {
     submitButton.classList.remove('animated'); // Remove a animação para voltar ao estado inicial
     messageElement.innerHTML = 'Dados enviados com sucesso!';
     messageElement.classList.add('success');
+    limparFormulario(); // Limpa o formulário após exibir a mensagem de sucesso
   }, 3400);
+
 
   var form = document.getElementById('ocorrenciaForm');
   var dados = {
