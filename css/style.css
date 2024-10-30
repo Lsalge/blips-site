@@ -1,0 +1,127 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  border: none;
+  border-radius: 4px;
+  color: #202020; /* Cor do texto para garantir visibilidade */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #fdc74f;
+  position: relative;
+  overflow: hidden;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.message.success {
+  color: green;
+}
+
+.message.error {
+  color: red;
+}
+
+.link {
+  margin-left: 0%;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efeito de preenchimento no botão */
+.botao::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #FFB900; /* Cor de preenchimento amarelo */
+  z-index: 0; /* Para o texto do botão ficar acima */
+}
+
+/* Animação de preenchimento do botão da esquerda para a direita */
+.animated::before {
+  animation: fillAnimation 3s forwards;
+}
+
+/* Keyframes para o efeito de preenchimento */
+@keyframes fillAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120%;
+  }
+}
+
+/* Ativa o preenchimento quando a classe animated é adicionada */
+button.animated::before {
+  width: 120%; /* Preenche o botão completamente */
+}
+
+
+
+/* Garante que o texto do botão esteja acima da animação */
+button span {
+  position: relative;
+  z-index: 1;
+}
